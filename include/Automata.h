@@ -15,6 +15,8 @@ class Automata {
 
     public: 
         Automata();
+        int getCash();
+        std::string getSelCoffee();
         void on();
         void off();
         void coin(int sum);
