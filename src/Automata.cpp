@@ -8,7 +8,7 @@ Automata::Automata() {
     prices.insert({{"White coffee", 30}, {"Espresso", 40}, {"Latte", 50}, {"Americano", 60}});
     state = STATES::OFF;
     selected_coffee;
-} 
+}
 int Automata::getCash() {
     return cash;
 }
@@ -44,10 +44,9 @@ STATES Automata::getState() {
 }
 void Automata::choice(std::string drink) {
     if (state == STATES::ACCEPT) {
-        state = STATES::CHECK; 
+        state = STATES::CHECK;
         selected_coffee = drink;
     }
-
 }
 bool Automata::check(std::string chosen_drink) {
     return prices[chosen_drink] <= cash;
@@ -56,19 +55,17 @@ void Automata::cancel() {
     if (state == STATES::ACCEPT || state == STATES::CHECK) {
         state = STATES::WAIT;
     }
-
 }
 void Automata::cook() {
     if (state == STATES::CHECK && check(selected_coffee)) {
         state = STATES::COOK;
-        cash-=prices[selected_coffee];
+        cash -= prices[selected_coffee];
         std::cout << "Cooking... " << "\n";
         for (int i = 1; i < 5; i++) {
             std::cout << 25*(i) << "%\n";
         }
         std::cout << "Your coffee is ready!" << "\n";
     }
-    
 }
 void Automata::finish() {
     if (state == STATES::COOK) {
@@ -76,4 +73,3 @@ void Automata::finish() {
         std::cout << "Your change: " << cash << "\n";
     }
 }
-
