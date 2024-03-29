@@ -1,7 +1,5 @@
 // Copyright 2022 GHA Test Team
 
-// Copyright 2022 GHA Test Team
-
 #include <gtest/gtest.h>
 #include "Automata.h"
 
@@ -46,7 +44,7 @@ TEST_F(AutomataTest, test6) {
     AC->on();
     AC->coin(70);
     AC->choice("Americano");
-    AC->cool();
+    AC->cook();
     STATES value = AC->getState();
     EXPECT_EQ(value, STATES::COOK);
 }
