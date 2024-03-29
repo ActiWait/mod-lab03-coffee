@@ -1,5 +1,7 @@
 // Copyright 2022 GHA Test Team
 
+// Copyright 2022 GHA Test Team
+
 #include <gtest/gtest.h>
 #include "Automata.h"
 
@@ -53,8 +55,8 @@ TEST_F(AutomataTest, test7) {
     AC->on();
     AC->coin(70);
     AC->choice("Americano");
-    AC->cool();
-    int value = AC->getCoin();
+    AC->cook();
+    int value = AC->getCash();
     EXPECT_EQ(value, 10);
 }
 
