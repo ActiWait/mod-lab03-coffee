@@ -9,6 +9,12 @@ Automata::Automata() {
     state = STATES::OFF;
     selected_coffee;
 } 
+int Automata::getCash() {
+    return cash;
+}
+std::string Automata::getSelCoffee() {
+    return selected_coffee;
+}
 void Automata::on() {
     if (state == STATES::OFF) {
         state = STATES::WAIT;
