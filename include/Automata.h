@@ -1,3 +1,5 @@
+// Copyright 2022 UNN-IASR
+
 #include <iostream>
 #include <vector>
 #include <map>
