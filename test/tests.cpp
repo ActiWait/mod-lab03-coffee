@@ -1,5 +1,7 @@
 // Copyright 2022 GHA Test Team
 
+// Copyright 2022 GHA Test Team
+
 #include <gtest/gtest.h>
 #include "Automata.h"
 
@@ -9,35 +11,30 @@ struct AutomataTest : public testing::Test {
     void TearDown() { delete AC; }
 };
 
-TEST_F(AutomataTest,test1)
-{
+TEST_F(AutomataTest, test1) {
     int value = AC.getCash();
     EXPECT_EQ(value, 0);
 }
 
-TEST_F(AutomataTest, test2)
-{
+TEST_F(AutomataTest, test2) {
     STATES value = AC.getState();
     EXPECT_EQ(value, STATES::OFF);
 }
 
-TEST_F(AutomataTest, test3)
-{
+TEST_F(AutomataTest, test3) {
     AC.on();
     STATES value = AC.getState();
     EXPECT_EQ(value, STATES::WAIT);
 }
 
-TEST_F(AutomataTest, test4)
-{
+TEST_F(AutomataTest, test4) {
     AC.on();
     AC.coin(70);
     int value = AC.getCash();
     EXPECT_EQ(value, 70);
 }
 
-TEST_F(AutomataTest, test5)
-{
+TEST_F(AutomataTest, test5) {
     AC.on();
     AC.coin(70);
     AC.choice("Americano");
@@ -45,8 +42,7 @@ TEST_F(AutomataTest, test5)
     EXPECT_STREQ(value, "Americano");
 }
 
-TEST_F(AutomataTest, test6)
-{
+TEST_F(AutomataTest, test6) {
     AC.on();
     AC.coin(70);
     AC.choice("Americano");
@@ -55,8 +51,7 @@ TEST_F(AutomataTest, test6)
     EXPECT_STREQ(value, STATES::COOK);
 }
 
-TEST_F(AutomataTest, test7)
-{
+TEST_F(AutomataTest, test7) {
     AC.on();
     AC.coin(70);
     AC.choice("Americano");
@@ -65,8 +60,7 @@ TEST_F(AutomataTest, test7)
     EXPECT_STREQ(value, 10);
 }
 
-TEST_F(AutomataTest, test8)
-{
+TEST_F(AutomataTest, test8) {
     AC.on();
     AC.coin(70);
     AC.choice("Americano");
@@ -76,8 +70,7 @@ TEST_F(AutomataTest, test8)
     EXPECT_STREQ(value, STATES::WAIT);
 }
 
-TEST_F(AutomataTest, test9)
-{
+TEST_F(AutomataTest, test9) {
     AC.on();
     AC.coin(70);
     AC.choice("Americano");
@@ -88,8 +81,7 @@ TEST_F(AutomataTest, test9)
     EXPECT_STREQ(value, STATES::OFF);
 }
 
-TEST_F(AutomataTest, test10)
-{
+TEST_F(AutomataTest, test10) {
     AC.on();
     AC.coin(70);
     AC.cook();
@@ -97,8 +89,7 @@ TEST_F(AutomataTest, test10)
     EXPECT_STREQ(value, STATES::ACCEPT);
 }
 
-TEST_F(AutomataTest, test11)
-{
+TEST_F(AutomataTest, test11) {
     AC.on();
     AC.coin(70);
     AC.off();
@@ -106,8 +97,7 @@ TEST_F(AutomataTest, test11)
     EXPECT_STREQ(value, STATES::ACCEPT);
 }
 
-TEST_F(AutomataTest, test12)
-{
+TEST_F(AutomataTest, test12) {
     AC.on();
     AC.coin(70);
     AC.choice("Americano");
