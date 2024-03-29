@@ -1,6 +1,6 @@
 // Copyright 2022 GHA Test Team
 
-#include <gtest/gtest->h>
+#include <gtest/gtest.h>
 #include "Automata.h"
 
 struct AutomataTest : public testing::Test {
