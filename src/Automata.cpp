@@ -4,8 +4,14 @@
 
 Automata::Automata() {
     cash = 0;
-    menu.insert(menu.begin(), {"White coffee", "Espresso", "Latte", "Americano"});
-    prices.insert({{"White coffee", 30}, {"Espresso", 40}, {"Latte", 50}, {"Americano", 60}});
+    menu.insert(menu.begin(), {"White coffee", 
+                                "Espresso", 
+                                "Latte", 
+                                "Americano"});
+    prices.insert({{"White coffee", 30}, 
+                    {"Espresso", 40}, 
+                    {"Latte", 50}, 
+                    {"Americano", 60}});
     state = STATES::OFF;
     selected_coffee;
 }
